@@ -1,4 +1,4 @@
-# Tech&Games Frontend
+# PRJ_News Tech&Games Frontend
 
 Este é o frontend do portal **Tech&Games**, um agregador de notícias focado em tecnologia, games, ciência e inovação. Desenvolvido com **Angular + Ionic**, o projeto é responsivo e adaptado para mobile e desktop.
 
