@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  newsApiKey: '',
+  eijijoidja: '3d252105d3f54f5489b4c5cf6768cdc7',
 };
 
 

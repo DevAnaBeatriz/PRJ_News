@@ -9,8 +9,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class NewsService {
-  private apiKey = environment.newsApiKey;
-  private apiUrl = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${this.apiKey}`;
+  private eijijoidja = environment.eijijoidja;
+  private apiUrl = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${this.eijijoidja}`;
 
   constructor(private http: HttpClient,) {}
 
@@ -24,7 +24,7 @@ getNews(): Observable<any> {
 }
 
 getTopHeadlines(category: string = ''): Observable<any> {
-  let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.apiKey}`;
+  let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.eijijoidja}`;
   if (category && category !== 'all') {
     url += `&category=${category}`;
   }
@@ -32,7 +32,7 @@ getTopHeadlines(category: string = ''): Observable<any> {
 }
 
 searchNews(term: string): Observable<any> {
-  const url = `https://newsapi.org/v2/everything?q=${term}&apiKey=${this.apiKey}`;
+  const url = `https://newsapi.org/v2/everything?q=${term}&apiKey=${this.eijijoidja}`;
   return this.http.get(url);
 }
 
