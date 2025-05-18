@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
+import { TruncatePipe } from '../pipes/truncate.pipe';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { NewsCardComponent } from '../components/news-card/news-card.component';
 
 
 @NgModule({
@@ -12,8 +14,12 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    TruncatePipe,
+    NewsCardComponent,
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage, 
+    ]
 })
 export class HomePageModule {}

@@ -1,0 +1,9 @@
+<ion-card (click)="onClick.emit()" class="news-card">
+  <img [src]="imageUrl | safeImage" alt="Imagem da notícia" (error)="handleImgError($event)" />
+  <ion-card-header>
+    <ion-card-title>{{ title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+  <p>{{ description | truncate:80 }}</p>
+  </ion-card-content>
+</ion-card>

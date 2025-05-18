@@ -1,20 +1,65 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<div class="loading-overlay" *ngIf="loading">
+  <ion-spinner name="crescent"></ion-spinner>
+</div>
+
+<ion-header *ngIf="!loading">
+  <ion-toolbar class="navbar" color="white">
+    <ion-buttons slot="start">
+      <img src="assets/logo-tech-games.png" alt="Tech&Games Logo" class="logo-img" />
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" *ngIf="!loading">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <section class="desktop-wrapper" *ngIf="!loading">
+    <!-- Barra de busca -->
+    <ion-searchbar
+      placeholder="Buscar por palavra-chave..."
+      [(ngModel)]="searchTerm"
+      (ionInput)="onSearchChange($event)">
+    </ion-searchbar>
+
+    <!-- Filtro de categorias -->
+    <ion-segment [(ngModel)]="selectedCategory" (ionChange)="onCategoryChange($event)">
+      <ion-segment-button value="all">
+        <ion-label>Todos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="technology">
+        <ion-label>Tecnologia</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="science">
+        <ion-label>Ciência</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="sports">
+        <ion-label>Esportes</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <!-- Card de noticias -->
+    <ng-container *ngIf="!loading_busca && news.length > 0; else noNews">
+      <app-news-card
+        *ngFor="let item of news"
+        [title]="item.title"
+        [description]="item.description | truncate:80"
+        [imageUrl]="item.urlToImage"
+        (onClick)="openArticle(item.url)">
+      </app-news-card>
+    </ng-container>
+
+    <ng-template #noNews>
+      <ion-text>
+        <p>Nenhuma notícia disponível no momento.</p>
+      </ion-text>
+    </ng-template>
+
+  </section>
+
+  <ion-footer *ngIf="!loading">
+  <ion-toolbar class="footer-bar" color="dark">
+    <ion-title class="footer-text" size="small">
+      © 2025 Tech&Games · Feito com ❤️ por Ana Beatriz
+    </ion-title>
+  </ion-toolbar>
+  </ion-footer>
 </ion-content>

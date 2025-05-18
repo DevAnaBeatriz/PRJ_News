@@ -1,0 +1,58 @@
+.news-card {
+  margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: white;
+
+  display: block;
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  ion-card-header,
+  ion-card-content {
+    padding: 12px;
+  }
+
+  ion-card-title {
+    font-size: 1.1rem;
+    color: #222;
+  }
+
+  ion-card-content p {
+    font-size: 0.9rem;
+    color: #444;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+
+    img {
+      width: 200px;
+      height: 140px;
+      margin-right: 16px;
+      border-radius: 8px;
+    }
+
+    ion-card-header,
+    ion-card-content {
+      flex: 1;
+      padding: 0;
+    }
+
+    ion-card-title {
+      font-size: 1.2rem;
+    }
+
+    ion-card-content p {
+      font-size: 1rem;
+    }
+  }
+}
