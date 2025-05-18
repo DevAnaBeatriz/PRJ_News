@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  newsApiKey:  import.meta.env['NG_APP_NEWS_API_KEY'] || ''
+  newsApiKey: '',
 };
 
 
