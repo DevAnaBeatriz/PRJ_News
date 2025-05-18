@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'http://localhost:3000/api/news' 
+  apiBaseUrl: 'https://prj-backendnews.onrender.com/api/news'
 };
 
 
